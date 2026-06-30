@@ -10,7 +10,7 @@ export default function Hero() {
     <section className="relative flex min-h-[88vh] items-center overflow-hidden bg-black-sheen">
       <div className="absolute inset-0">
         <Image
-          src="https://meridianwatches.in/cdn/shop/files/14_e2556e5f-e8e3-4ba7-a7cc-ea8df420f36f.png?v=1778403527&width=1400"
+          src="https://fastly.picsum.photos/id/575/1920/1200.jpg?hmac=XtvY-jLOlBWL4cJrBT3mrzPOrrBYNQVfxmPQsgq_CiI"
           alt="H&S Watches — Meridian Automatic Chronograph on a dark marble surface"
           fill
           priority
