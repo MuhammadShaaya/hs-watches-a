@@ -3,7 +3,7 @@ import { Product, ProductImage, ProductVariantOption } from "@/types";
 function img(seed: string, alt: string, isMain = false, order = 0): ProductImage {
   return {
     id: `${seed}-${order}`,
-    url: `https://picsum.photos/seed/${seed}/900/1100`,
+    url: `/products/${seed.split("-").slice(0, -1).join("-")}/${order + 1}.jpg`,
     alt,
     isMain,
     order,
