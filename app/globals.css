@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-border: #ECECEC;
+  --color-text: #0D0D0D;
+  --color-text-muted: #6B6B6B;
+}
+
+.dark {
+  --color-bg: #0D0D0D;
+  --color-surface: #1A1A1A;
+  --color-border: #2A2A2A;
+  --color-text: #FAFAFA;
+  --color-text-muted: #A3A3A3;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D4AF37 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 999px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+@layer base {
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-playfair), Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background-color: #D4AF37;
+    color: #0D0D0D;
+  }
+  :focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-body text-xs tracking-luxe uppercase text-gold-dark font-semibold;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, #D4AF37 0%, #F4E4A6 45%, #B8860B 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .skeleton {
+    background: linear-gradient(90deg, #ECECEC 25%, #F5F5F5 37%, #ECECEC 63%);
+    background-size: 1000px 100%;
+    animation: shimmer 1.6s infinite linear;
+  }
+
+  .dark .skeleton {
+    background: linear-gradient(90deg, #1A1A1A 25%, #242424 37%, #1A1A1A 63%);
+    background-size: 1000px 100%;
+  }
+
+  .btn-luxury-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-btn bg-luxury-black px-7 py-3.5 font-body text-sm font-semibold tracking-wide text-white transition-all duration-300 ease-luxe hover:shadow-gold hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-40 disabled:pointer-events-none;
+  }
+
+  .btn-luxury-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-btn bg-gold-gradient-soft px-7 py-3.5 font-body text-sm font-semibold tracking-wide text-luxury-black transition-all duration-300 ease-luxe hover:shadow-gold hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-40 disabled:pointer-events-none;
+  }
+
+  .btn-luxury-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-btn border border-luxury-black/20 px-7 py-3.5 font-body text-sm font-semibold tracking-wide text-luxury-black transition-all duration-300 ease-luxe hover:border-gold hover:bg-gold/5 disabled:opacity-40 disabled:pointer-events-none;
+  }
+
+  .dark .btn-luxury-outline {
+    @apply border-white/20 text-white hover:bg-white/5;
+  }
+
+  .card-luxury {
+    @apply rounded-luxury border border-surface-border bg-surface-card shadow-luxury-sm transition-all duration-300 ease-luxe;
+  }
+
+  .input-luxury {
+    @apply w-full rounded-[10px] border border-surface-border bg-white px-4 py-3 font-body text-sm text-luxury-black placeholder:text-black/35 transition-colors focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20;
+  }
+
+  .dark .input-luxury {
+    @apply border-white/10 bg-luxury-charcoal text-white placeholder:text-white/30;
+  }
+}
+
+@media print {
+  nav, footer, .no-print { display: none !important; }
+}

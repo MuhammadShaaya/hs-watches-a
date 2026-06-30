@@ -1,0 +1,103 @@
+import { User, Address } from "@/types";
+
+function addr(id: string, fullName: string, phone: string, street: string, city: string, province: string, postalCode: string, isDefault = true): Address {
+  return { id, fullName, phone, street, city, province, postalCode, country: "United States", isDefault };
+}
+
+export const USERS: User[] = [
+  {
+    id: "u-admin",
+    name: "Shabbir Ahmed Khan",
+    email: "admin@hswatches.com",
+    password: "admin123",
+    role: "admin",
+    avatar: "https://picsum.photos/seed/admin-avatar/200/200",
+    phone: "+1 (212) 555-0100",
+    addresses: [addr("a1", "Shabbir Ahmed Khan", "+1 (212) 555-0100", "1 Madison Avenue, Suite 1200", "New York", "NY", "10010")],
+    wishlist: [],
+    createdAt: "2023-01-10T00:00:00.000Z",
+    blocked: false,
+  },
+  {
+    id: "u-manager",
+    name: "Layla Hassan",
+    email: "manager@hswatches.com",
+    password: "manager123",
+    role: "manager",
+    avatar: "https://picsum.photos/seed/manager-avatar/200/200",
+    phone: "+1 (212) 555-0101",
+    addresses: [],
+    wishlist: [],
+    createdAt: "2023-03-22T00:00:00.000Z",
+    blocked: false,
+  },
+  {
+    id: "u1",
+    name: "James Whitfield",
+    email: "james.whitfield@example.com",
+    password: "password123",
+    role: "customer",
+    avatar: "https://picsum.photos/seed/cust1/200/200",
+    phone: "+1 (310) 555-0123",
+    addresses: [addr("a2", "James Whitfield", "+1 (310) 555-0123", "452 Ocean Drive, Apt 6B", "Los Angeles", "CA", "90291")],
+    wishlist: ["p1", "p6"],
+    createdAt: "2024-02-14T00:00:00.000Z",
+    blocked: false,
+  },
+  {
+    id: "u2",
+    name: "Sarah Chen",
+    email: "sarah.chen@example.com",
+    password: "password123",
+    role: "customer",
+    avatar: "https://picsum.photos/seed/cust2/200/200",
+    phone: "+1 (415) 555-0145",
+    addresses: [addr("a3", "Sarah Chen", "+1 (415) 555-0145", "88 Mission Street", "San Francisco", "CA", "94105")],
+    wishlist: ["p4", "p11"],
+    createdAt: "2024-04-02T00:00:00.000Z",
+    blocked: false,
+  },
+  {
+    id: "u3",
+    name: "Omar Al-Rashid",
+    email: "omar.alrashid@example.com",
+    password: "password123",
+    role: "customer",
+    avatar: "https://picsum.photos/seed/cust3/200/200",
+    phone: "+1 (713) 555-0177",
+    addresses: [addr("a4", "Omar Al-Rashid", "+1 (713) 555-0177", "200 Westheimer Road", "Houston", "TX", "77006")],
+    wishlist: ["p9"],
+    createdAt: "2024-05-19T00:00:00.000Z",
+    blocked: false,
+  },
+  {
+    id: "u4",
+    name: "Isabella Marchetti",
+    email: "isabella.marchetti@example.com",
+    password: "password123",
+    role: "customer",
+    avatar: "https://picsum.photos/seed/cust4/200/200",
+    phone: "+1 (305) 555-0188",
+    addresses: [addr("a5", "Isabella Marchetti", "+1 (305) 555-0188", "1100 Brickell Bay Drive", "Miami", "FL", "33131")],
+    wishlist: [],
+    createdAt: "2024-06-30T00:00:00.000Z",
+    blocked: false,
+  },
+  {
+    id: "u5",
+    name: "David Kim",
+    email: "david.kim@example.com",
+    password: "password123",
+    role: "customer",
+    avatar: "https://picsum.photos/seed/cust5/200/200",
+    phone: "+1 (206) 555-0199",
+    addresses: [addr("a6", "David Kim", "+1 (206) 555-0199", "500 Pine Street", "Seattle", "WA", "98101")],
+    wishlist: ["p3"],
+    createdAt: "2024-08-11T00:00:00.000Z",
+    blocked: true,
+  },
+];
+
+export function findUserByEmail(email: string) {
+  return USERS.find((u) => u.email.toLowerCase() === email.toLowerCase());
+}
