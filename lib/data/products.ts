@@ -77,74 +77,133 @@ function genReviews(productId: string, names: string[], baseRating: number) {
 
 const RAW: Omit<Product, "images" | "reviews" | "rating" | "reviewCount" | "createdAt">[] = [
   {
-    id: "p1",
-    slug: "meridian-automatic-chronograph",
-    sku: "HS-MER-001",
-    barcode: "8901234560011",
-    name: "Meridian Automatic Chronograph",
-    brandName: "H&S Watches",
-    collection: "Chronograph",
-    gender: "Men",
-    movement: "Automatic",
-    caseMaterial: "Stainless Steel",
-    caseSize: "42mm",
-    strapOptions: [STRAP_STEEL, STRAP_LEATHER],
-    colorOptions: [COLOR_BLACK, COLOR_BLUE, COLOR_SILVER],
-    price: 4250,
-    salePrice: undefined,
-    currency: "USD",
-    stock: 14,
-    weightGrams: 168,
-    dimensions: "42mm x 12.4mm",
-    shortDescription: "A masterclass in precision engineering, the Meridian pairs a column-wheel chronograph with mirror-polished lugs.",
-    description:
-      "The Meridian Automatic Chronograph is the result of three years of in-house development, built around a column-wheel chronograph movement visible through an exhibition caseback. Every surface — from the sunburst dial to the knurled pusher caps — has been finished by hand in our Geneva atelier. This is a watch built for those who measure time, and demand that the instrument measuring it be worthy of the moment.",
-    specifications: specs("316L Stainless Steel", "42mm", "Automatic, Column-Wheel Chronograph, Cal. HS-400", "100m / 10 ATM", "Sapphire, anti-reflective both sides", "70 hours"),
-    warranty: "5-Year International Warranty",
-    featured: true,
-    trending: true,
-    newArrival: false,
-    bestSeller: true,
-    status: "Active",
-    tags: ["chronograph", "automatic", "steel", "bestseller"],
-    seoTitle: "Meridian Automatic Chronograph | H&S Watches",
-    seoDescription: "Discover the Meridian Automatic Chronograph — a hand-finished column-wheel chronograph in 316L steel with a 70-hour power reserve.",
-    seoKeywords: ["luxury chronograph", "automatic watch", "swiss-style chronograph"],
-  },
+  id: "p1",
+  slug: "poedagar-landweller",
+  sku: "PD-LAND-001",
+  barcode: "8900000000001",
+  name: "Poedagar Landweller Heritage",
+  brandName: "Poedagar",
+  collection: "Classic",
+  gender: "Men",
+  movement: "Quartz",
+  caseMaterial: "Stainless Steel",
+  caseSize: "41mm",
+  strapOptions: [STRAP_STEEL],
+  colorOptions: [COLOR_BLUE, COLOR_BLACK, COLOR_SILVER],
+  price: 8000,
+  salePrice: undefined,
+  currency: "USD",
+  stock: 999,
+  weightGrams: 160,
+  dimensions: "41mm x 12mm",
+
+  shortDescription:
+    "A refined two-tone timepiece crafted for those who appreciate timeless elegance and everyday versatility.",
+
+  description:
+    "The Poedagar Landweller Heritage blends sophisticated styling with dependable performance. Featuring a striking combination of silver, black, blue and two-tone stainless steel finishes, this watch delivers a premium presence suitable for both formal and casual occasions. Its balanced proportions, detailed dial work and luxurious wrist feel make it one of the most versatile watches in the H&S collection.",
+
+  specifications: [
+    { label: "Brand", value: "Poedagar" },
+    { label: "Model", value: "Landweller" },
+    { label: "Movement", value: "Quartz" },
+    { label: "Case Material", value: "Stainless Steel" },
+    { label: "Dial Options", value: "Multiple Colours Available" },
+    { label: "Delivery", value: "More Than Average Delivery Time" },
+  ],
+
+  warranty: "H&S Watches Warranty",
+
+  featured: true,
+  trending: true,
+  newArrival: true,
+  bestSeller: true,
+
+  status: "Active",
+
+  tags: [
+    "poedagar",
+    "landweller",
+    "luxury",
+    "classic",
+    "stainless steel",
+  ],
+
+  seoTitle: "Poedagar Landweller Heritage | H&S Watches",
+
+  seoDescription:
+    "Discover the Poedagar Landweller Heritage featuring premium stainless steel construction and multiple dial colour options.",
+
+  seoKeywords: [
+    "Poedagar Landweller",
+    "Luxury Watch",
+    "Poedagar Pakistan",
+    "Classic Watch",
+  ],
+},
   {
-    id: "p2",
-    slug: "calibre-noir-dress-watch",
-    sku: "HS-CAL-002",
-    barcode: "8901234560028",
-    name: "Calibre Noir Dress Watch",
-    brandName: "H&S Watches",
-    collection: "Classic",
-    gender: "Men",
-    movement: "Manual Wind",
-    caseMaterial: "Rose Gold",
-    caseSize: "39mm",
-    strapOptions: [STRAP_LEATHER],
-    colorOptions: [COLOR_BLACK, COLOR_WHITE],
-    price: 8900,
-    currency: "USD",
-    stock: 6,
-    weightGrams: 84,
-    dimensions: "39mm x 9.1mm",
-    shortDescription: "An ultra-thin manual-wind dress watch in 18k rose gold, designed for the boardroom and the black-tie evening alike.",
-    description:
-      "The Calibre Noir is the quiet centerpiece of a refined wardrobe. Cased in 18k rose gold and powered by a hand-wound manual movement just 3.2mm thick, it slips effortlessly under a cuff while remaining unmistakably present at the wrist. The lacquered black dial is applied with faceted gold indices, individually set by hand under magnification.",
-    specifications: specs("18k Rose Gold", "39mm", "Manual Wind, Cal. HS-Slim 3.2", "30m / 3 ATM", "Sapphire, domed", "48 hours"),
-    warranty: "5-Year International Warranty",
-    featured: true,
-    trending: false,
-    newArrival: false,
-    bestSeller: false,
-    status: "Active",
-    tags: ["dress watch", "rose gold", "manual wind", "limited"],
-    seoTitle: "Calibre Noir Dress Watch in 18k Rose Gold | H&S Watches",
-    seoDescription: "The Calibre Noir is an ultra-thin manual-wind dress watch in 18k rose gold with a hand-lacquered black dial.",
-    seoKeywords: ["dress watch", "rose gold watch", "manual wind luxury watch"],
-  },
+  id: "p2",
+  slug: "poedagar-yachtmaster",
+  sku: "PD-YACHT-002",
+  barcode: "8900000000002",
+  name: "Poedagar YachtMaster Elite",
+  brandName: "Poedagar",
+  collection: "Diver",
+  gender: "Men",
+  movement: "Quartz",
+  caseMaterial: "Stainless Steel",
+  caseSize: "42mm",
+  strapOptions: [STRAP_STEEL],
+  colorOptions: [COLOR_BLUE, COLOR_BLACK, COLOR_SILVER],
+  price: 8000,
+  salePrice: undefined,
+  currency: "USD",
+  stock: 999,
+  weightGrams: 170,
+  dimensions: "42mm x 12mm",
+
+  shortDescription:
+    "Sport-inspired elegance designed for those who demand both presence and performance.",
+
+  description:
+    "The Poedagar YachtMaster Elite combines modern styling with exceptional wrist presence. Crafted from stainless steel and offered with multiple dial variations, it delivers a premium luxury-watch aesthetic at an accessible price point. Whether paired with formal attire or daily wear, the YachtMaster Elite stands out with confidence.",
+
+  specifications: [
+    { label: "Brand", value: "Poedagar" },
+    { label: "Model", value: "YachtMaster" },
+    { label: "Movement", value: "Quartz" },
+    { label: "Case Material", value: "Stainless Steel" },
+    { label: "Dial Options", value: "Multiple Colours Available" },
+    { label: "Delivery", value: "More Than Average Delivery Time" },
+  ],
+
+  warranty: "H&S Watches Warranty",
+
+  featured: true,
+  trending: true,
+  newArrival: true,
+  bestSeller: true,
+
+  status: "Active",
+
+  tags: [
+    "poedagar",
+    "yachtmaster",
+    "diver",
+    "luxury",
+  ],
+
+  seoTitle: "Poedagar YachtMaster Elite | H&S Watches",
+
+  seoDescription:
+    "Premium stainless steel Poedagar YachtMaster Elite with multiple dial colour options.",
+
+  seoKeywords: [
+    "Poedagar YachtMaster",
+    "Luxury Diver Watch",
+    "Poedagar Pakistan",
+  ],
+},
   {
     id: "p3",
     slug: "abyssal-diver-300",
