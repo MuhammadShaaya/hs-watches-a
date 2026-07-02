@@ -101,10 +101,6 @@ export default function LoginPage() {
         Continue with Google
       </button>
 
-      <button onClick={handleAdminDemo} className="mt-3 w-full rounded-btn border border-dashed border-gold/50 px-4 py-3 font-body text-xs font-semibold text-gold-dark hover:bg-gold/5">
-        Demo: Login as Admin
-      </button>
-
       <p className="mt-6 text-center font-body text-sm text-black/55">
         Don&apos;t have an account?{" "}
         <Link href="/signup" className="font-semibold text-gold-dark hover:text-gold">
