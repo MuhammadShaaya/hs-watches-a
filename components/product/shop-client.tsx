@@ -3,7 +3,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Grid2x2, List, SlidersHorizontal, X } from "lucide-react";
-import { PRODUCTS } from "@/lib/data/products";
 import ProductGrid from "@/components/product/product-grid";
 import FilterSidebar, { ShopFilters } from "@/components/product/filter-sidebar";
 import ProductListRow from "@/components/product/product-list-row";
