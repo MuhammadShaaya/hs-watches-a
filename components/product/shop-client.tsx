@@ -8,6 +8,32 @@ import FilterSidebar, { ShopFilters } from "@/components/product/filter-sidebar"
 import ProductListRow from "@/components/product/product-list-row";
 import { Product } from "@/types";
 
+const [products, setProducts] = useState<Product[]>([]);
+const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+  async function loadProducts() {
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/products`,
+        {
+          cache: "no-store",
+        }
+      );
+
+      const data = await res.json();
+
+      setProducts(data.items || []);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  loadProducts();
+}, []);
+
 type SortKey = "newest" | "price-asc" | "price-desc" | "rating" | "popular";
 
 const PAGE_SIZE = 12;
@@ -47,7 +73,7 @@ export default function ShopClient() {
   const salePreset = searchParams.get("sale");
 
   const filtered = useMemo(() => {
-    let list: Product[] = [...PRODUCTS];
+    let list: Product[] = [...products];
 
     if (search.trim()) {
       const q = search.trim().toLowerCase();
@@ -97,6 +123,14 @@ export default function ShopClient() {
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const pageItems = filtered.slice(0, page * PAGE_SIZE);
 
+  if (loading) {
+  return (
+    <div className="container py-20 text-center">
+      Loading watches...
+    </div>
+  );
+}
+  
   return (
     <div className="container py-10">
       <div className="mb-8 flex flex-col gap-2">
