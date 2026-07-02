@@ -1,5 +1,25 @@
 import { Product, ProductImage, ProductVariantOption } from "@/types";
 
+const BRAND = {
+
+ROLEX: "Rolex",
+
+OMEGA: "Omega",
+
+PATEK: "Patek Philippe",
+
+AP: "Audemars Piguet",
+
+TAG: "TAG Heuer",
+
+TISSOT: "Tissot",
+
+SEIKO: "Seiko",
+
+CITIZEN: "Citizen",
+
+} as const;
+
 function img(seed: string, alt: string, isMain = false, order = 0): ProductImage {
   return {
     id: `${seed}-${order}`,
